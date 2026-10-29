@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>डॉ. प्रसाद क्लिनिक - फीस भुगतान</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f7f6;
+            padding: 50px 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+        }
+        h2 { color: #333; }
+        .fee {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e88e5;
+            margin: 20px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #5f259f; /* PhonePe Purple Color */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #4b1d7e;
+        }
+        .info {
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>डॉ. प्रसाद क्लिनिक</h2>
+    <p>अपॉइंटमेंट फीस (Amount Hold)</p>
+    <div class="fee">₹200</div>
+    
+    <!-- यह बटन मरीज के फोन में सीधा PhonePe खोलेगा -->
+    <a href="upi://mandate?pa=8924030276@upi&pn=DoctorPrasad&am=200&amrule=EXACT&mn=ClinicFeesHold&validitystart=29102026&validityend=30102026&purpose=00" class="btn">
+        PhonePe से फीस ब्लॉक करें
+    </a>
+
+    <p class="info">नोट: यह राशि आपके खाते में सिर्फ होल्ड (Lock) होगी। इलाज पूरा होने या डॉक्टर साहब के अप्रूवल के बाद ही कटेगी।</p>
+</div>
+
+<script>
+    // ऑटो-सिस्टम: जैसे ही मरीज इस पेज को खोलेगा, 2 सेकंड में उसका PhonePe अपने आप खुल जाएगा
+    window.onload = function() {
+        setTimeout(function() {
+            window.location.href = "upi://mandate?pa=8924030276@upi&pn=DoctorPrasad&am=200&amrule=EXACT&mn=ClinicFeesHold&validitystart=29102026&validityend=30102026&purpose=00";
+        }, 2000);
+    };
+</script>
+
+</body>
+</html>
